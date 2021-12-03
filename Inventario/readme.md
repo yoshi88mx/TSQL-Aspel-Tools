@@ -15,6 +15,7 @@ Se debe declarar el numero de almacen **origen**
 
 Para cambiar el numero de empresa se debe reemplazar el numero de las tablas en las consultas por ejemplo:
 `SELECT CVE_ART, EXIST FROM MULT01 WHERE EXIST > 0.....`
+
 Aqui el numero de empresa es la 05
 `SELECT CVE_ART, EXIST FROM MULT05 WHERE EXIST > 0.....`
 
