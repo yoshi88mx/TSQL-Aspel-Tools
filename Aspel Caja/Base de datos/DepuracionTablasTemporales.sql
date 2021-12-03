@@ -1,0 +1,14 @@
+DECLARE @TableName varchar(255)
+DECLARE TableCursor CURSOR FOR
+--DEPURACION DE TABLAS TEMPORALES
+SELECT table_name FROM INFORMATION_SCHEMA.TABLES
+WHERE table_name like '%!_%'ESCAPE '!'
+OPEN TableCursor
+FETCH NEXT FROM TableCursor INTO @TableName
+WHILE @@FETCH_STATUS = 0
+BEGIN
+EXEC ('DROP TABLE [dbo].' + @TableName )
+FETCH NEXT FROM TableCursor INTO @TableName
+END
+CLOSE TableCursor
+DEALLOCATE TableCursor
